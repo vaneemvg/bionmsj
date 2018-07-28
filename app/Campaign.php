@@ -11,7 +11,7 @@ class Campaign extends Model
 	
     //Atributos asignables
     protected $fillable = [
-        'nombre', 'estado','user_id','cliente_id','created_at','updated_at'
+        'nombre', 'estado','user_id','cliente_id',
     ];
 	
 	//Relaciones

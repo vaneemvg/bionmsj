@@ -25,12 +25,7 @@ class Envio extends Model
 		return $this->hasOne('App\Enviowapp');
 	 }
 	 
-	  public function rangohorario()
-	 {
-		return $this->hasOne('App\Rangohorario');
-	 }
-	 
-	 public function campañas()
+	 public function campaigns()
 	 {
 		 return $this->belongsToMany('App\Campaign');
 	 }

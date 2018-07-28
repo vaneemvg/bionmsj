@@ -17,7 +17,7 @@ class Contacto extends Model
     //Relaciones
     public function listas()
     {
-        return $this->belongsToMany('App\Lista','lista_contacto');
+        return $this->belongsToMany('App\Lista')->as('lista_contacto');
     }
 
     public function user()
