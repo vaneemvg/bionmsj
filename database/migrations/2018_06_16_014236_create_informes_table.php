@@ -17,8 +17,11 @@ class CreateInformesTable extends Migration
             $table->increments('id');
 			$table->integer('campaign_id')->unsigned();
 			$table->string('descarga');
+			$table->dateTime('fecha_hora');
+			$table->integer('user_id')->unsigned();
 			
 			$table->foreign('campaign_id')->references('id')->on('campaigns');
+            $table->foreign('user_id')->references('id')->on('users');
 			
             $table->timestamps();
         });
