@@ -20,12 +20,12 @@ Route::group(['middleware' => 'auth'], function (){
         Route::resource('listas', 'user\ListasController');
         Route::resource('campaings', 'user\CampaingsController');
         Route::resource('contactos', 'user\ContactosController');
-        Route::resource('galeria', 'user\GaleriaController');
+        Route::resource('galeria', 'user\ArchivosController');
     });
     Route::group(['prefix' => 'admin'], function () {//esto habria que validar con autenticacion de admin?
         Route::resource('listas', 'admin\AdminUsersController');
         Route::resource('campaings', 'admin\AdminCampaingsController');
-        Route::resource('galeria', 'admin\AdminGaleriaController');
+        Route::resource('galeria', 'admin\AdminArchivosController');
     });
 });*/
 
@@ -34,7 +34,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::resource('listas', 'user\ListasController');
     Route::resource('campaigns', 'user\CampaignsController');
     Route::resource('contactos', 'user\ContactosController');
-    Route::resource('galeria', 'user\GaleriaController');
+    Route::resource('galeria', 'user\ArchivosController');
 });
 /*
 Route::get('/', function () {

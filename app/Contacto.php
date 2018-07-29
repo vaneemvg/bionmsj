@@ -11,17 +11,23 @@ class Contacto extends Model
 
     //Atributos asignables
     protected $fillable = [
-        'nombre', 'telefono', 'estado','user_id','cliente_id','created_at','updated_at',
+        'codigo','nombre', 'telefono', 'email','estado','user_id','cliente_id',
     ];
 
     //Relaciones
-    public function listas()
+    public function envios()
     {
-        return $this->belongsToMany('App\Lista')->as('lista_contacto');
+        return $this->belongsToMany('App\Envio')->as('envio_contacto')->withPivot('campo_tipo', 'campo_valor', 'estado');
     }
 
     public function user()
     {
         return $this->belongsTo('App\User');
     }
+
+    public function listas()
+    {
+        return $this->belongsToMany('App\Lista')->as('lista_contacto');
+    }
+
 }

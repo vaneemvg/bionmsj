@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\user;
 
-use App\Galeria;
+use App\Archivo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class AdminGaleriaController extends Controller
+class ArchivosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,10 +42,10 @@ class AdminGaleriaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Galeria  $galeria
+     * @param  \App\Archivo  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function show(Galeria $galeria)
+    public function show(Archivo $galeria)
     {
         //
     }
@@ -53,10 +53,10 @@ class AdminGaleriaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Galeria  $galeria
+     * @param  \App\Archivo  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Galeria $galeria)
+    public function edit(Archivo $galeria)
     {
         //
     }
@@ -65,10 +65,10 @@ class AdminGaleriaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Galeria  $galeria
+     * @param  \App\Archivo  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Galeria $galeria)
+    public function update(Request $request, Archivo $galeria)
     {
         //
     }
@@ -76,10 +76,10 @@ class AdminGaleriaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Galeria  $galeria
+     * @param  \App\Archivo  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Galeria $galeria)
+    public function destroy(Archivo $galeria)
     {
         //
     }

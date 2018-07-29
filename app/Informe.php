@@ -8,18 +8,20 @@ class Informe extends Model
 {
     //Tabla del modelos
     protected $table = "informes";
-	
-	//Clave primaria
-	protected $primaryKey = 'campaña_id';
-	
+
     //Atributos asignables
     protected $fillable = [
-        'descarga', 
+        'descarga', 'campaign_id', 'fecha_hora', 'user_id',
     ];
-	
-	//Relaciones
-	public function campaña()
-	 {
-		return $this->belongsTo('App\Campaign');
-	 }
+
+    //Relaciones
+    public function campaign()
+    {
+        return $this->belongsTo('App\Campaign');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 }

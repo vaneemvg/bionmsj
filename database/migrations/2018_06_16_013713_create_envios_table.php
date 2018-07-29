@@ -17,10 +17,8 @@ class CreateEnviosTable extends Migration
             $table->increments('id');
             $table->integer('cliente_id')->unsigned();
             $table->enum('tipo', ['SMS', 'WAPP', 'MAIL']);
-            $table->string('remitente', 60);
             $table->date('fecha');
-            $table->string('rango');
-            $table->boolean('desuscribe');
+            $table->text('texto');
             $table->enum('estado', ['PENDIENTE', 'CANCELADO', 'ENVIADO'])->default('PENDIENTE');
             $table->integer('user_id')->unsigned();
 

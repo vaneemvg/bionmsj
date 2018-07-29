@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'cliente_id', 'name', 'email', 'password', 'foto',
+        'cliente_id', 'name', 'email', 'avatar', 'estado', 'tipo',
     ];
 
     /**
@@ -27,24 +27,50 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-	
-	//relaciones 
-	 public function listas()
-	 {
-		return $this->hasMany('App\Lista');
-	 }
-	 
-	 public function campaigns()
-	 {
-		return $this->hasMany('App\Campaign');
-	 }
-	 
-	 public function envios()
-	 {
-		return $this->hasMany('App\Envio');
-	 }
-	 
-	  public function creditos()
-	 {
-		return $this->hasMany('App\Credito');
-	 }}
+
+    //relaciones
+    public function listas()
+    {
+        return $this->hasMany('App\Lista');
+    }
+
+    public function contactos()
+    {
+        return $this->hasMany('App\Contacto');
+    }
+
+    public function campaigns()
+    {
+        return $this->hasMany('App\Campaign');
+    }
+
+    public function envios()
+    {
+        return $this->hasMany('App\Envio');
+    }
+
+    public function creditos()
+    {
+        return $this->hasMany('App\Credito');
+    }
+
+    public function configuraciones()
+    {
+        return $this->hasMany('App\Configuracion');
+    }
+
+    public function tags()
+    {
+        return $this->hasMany('App\Tag');
+    }
+
+    public function archivos()
+    {
+        return $this->hasMany('App\Archivo');
+    }
+
+    public function informes()
+    {
+        return $this->hasMany('App\Informe');
+    }
+}

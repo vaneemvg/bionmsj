@@ -17,28 +17,14 @@ class CreateConfiguracionesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('nombre', 60);
-            $table->enum('validacion', ['NUMERICO', 'ALFANUMERICO', 'ENUM', 'FECHA', 'HORA', 'FECHAHORA', 'BOOLEAN']);
-            $table->enum('uso', ['USER', 'ADMIN'])->default('USER');
-            $table->string('aplica', 60);
             $table->string('valor');
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->unique(['nombre', 'user_id']);
 
             $table->timestamps();
         });
 
-
-        Schema::create('user_configuracion', function (Blueprint $table) {
-            $table->integer('user_id')->unsigned();
-            $table->integer('configuracion_id')->unsigned();
-            $table->string('valor');
-            $table->enum('estado', ['ACTIVA', 'INACTIVA'])->default('ACTIVA');
-
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('configuracion_id')->references('id')->on('configuraciones');
-
-            $table->timestamps();
-        });
     }
 
     /**
@@ -49,6 +35,5 @@ class CreateConfiguracionesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('configuraciones');
-        Schema::dropIfExists('user_configuracion');
     }
 }

@@ -4,14 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Campaign extends Model
+class Archivo extends Model
 {
     //Tabla del modelos
-    protected $table = "campaigns";
+    protected $table = "archivos";
 
     //Atributos asignables
     protected $fillable = [
-        'nombre', 'estado', 'user_id', 'cliente_id',
+        'nombre','tipo','archivo','user_id',
     ];
 
     //Relaciones
@@ -20,13 +20,8 @@ class Campaign extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function informe()
-    {
-        return $this->hasOne('App\Informe');
-    }
-
     public function envios()
     {
-        return $this->belongsToMany('App\Envio');
+        return $this->belongsToMany('App\Envio')->as('envio_archivo');
     }
 }

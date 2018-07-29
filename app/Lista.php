@@ -11,13 +11,13 @@ class Lista extends Model
 
     //Atributos asignables
     protected $fillable = [
-        'nombre', 'estado','user_id','cliente_id','created_at','updated_at',
+        'nombre', 'estado', 'user_id', 'cliente_id', 'created_at', 'updated_at',
     ];
 
     //Relaciones
     public function contactos()
     {
-        return $this->belongsToMany('App\Contacto', 'lista_contacto');
+        return $this->belongsToMany('App\Contacto');
     }
 
     public function user()

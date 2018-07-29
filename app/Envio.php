@@ -8,29 +8,31 @@ class Envio extends Model
 {
     //Tabla del modelos
     protected $table = "envios";
-	
+
     //Atributos asignables
     protected $fillable = [
-         'tipo','remitente','fecha','rango_id','desuscribe',
+        'tipo', 'fecha', 'texto', 'cliente_id', 'estado', 'user_id',
     ];
-	
-	//Relaciones
-	public function enviosms()
-	 {
-		return $this->hasOne('App\Enviosms');
-	 }
-	 
-	 public function enviowapp()
-	 {
-		return $this->hasOne('App\Enviowapp');
-	 }
-	 
-	 public function campaigns()
-	 {
-		 return $this->belongsToMany('App\Campaign');
-	 }
-	 
-	 public function contactos(){
-		 return $this->belongsToMany('App\Contacto')->withPivot('campo_tipo', 'campo_valor', 'estado');
-	 }
+
+    //Relaciones
+
+    public function campaigns()
+    {
+        return $this->belongsToMany('App\Campaign')->as('campaign_envio');;
+    }
+
+    public function contactos()
+    {
+        return $this->belongsToMany('App\Contacto');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function propiedades()
+    {
+        return $this->belongsToMany('App\Propiedad');
+    }
 }

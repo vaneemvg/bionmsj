@@ -24,6 +24,16 @@ class CreateArchivosTable extends Migration
 
             $table->timestamps();
         });
+
+        Schema::create('envio_archivo', function (Blueprint $table) {
+            $table->integer('envio_id')->unsigned();
+            $table->integer('archivo_id')->unsigned();
+
+            $table->foreign('archivo_id')->references('id')->on('archivos');
+            $table->foreign('envio_id')->references('id')->on('envios');
+
+            $table->timestamps();
+        });
     }
 
     /**
@@ -34,5 +44,6 @@ class CreateArchivosTable extends Migration
     public function down()
     {
         Schema::dropIfExists('archivos');
+        Schema::dropIfExists('envio_archivos');
     }
 }
