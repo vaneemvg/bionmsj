@@ -73,4 +73,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Informe');
     }
+
+    public function cliente()
+    {
+        return $this->belongsTo('App\Cliente');
+    }
+
 }

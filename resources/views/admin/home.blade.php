@@ -4,11 +4,8 @@
 
 @section('username' ,$usuario->name)
 @section('usermail' ,$usuario->email)
+@section('useravatar',$usuario->avatar)
 
 @section('content')
-    <div id="page-content">
 
-
-
-    </div>
 @endsection

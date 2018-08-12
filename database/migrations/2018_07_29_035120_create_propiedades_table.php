@@ -15,6 +15,7 @@ class CreatePropiedadesTable extends Migration
     {
         Schema::create('propiedades', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('propiedad');
             $table->string('nombre', 60);
             $table->string('detalle');
             $table->string('validacion');
@@ -22,6 +23,7 @@ class CreatePropiedadesTable extends Migration
             $table->enum('uso', ['USER', 'ADMIN'])->default('USER');
             $table->string('aplica', 60);
             $table->boolean('obliga')->default(false);
+            $table->integer('creditos');
             $table->enum('estado', ['ACTIVA', 'INACTIVA'])->default('ACTIVA');
 
             $table->timestamps();

@@ -3,6 +3,7 @@
 @section('title' ,'Galería')
 
 @section('content')
+
     <div class="panel">
         <div class="pad-all">
             <div id="demo-gallery-2" style="display:none;">

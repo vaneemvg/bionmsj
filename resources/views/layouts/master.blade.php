@@ -180,7 +180,7 @@
                             <div id="mainnav-profile" class="mainnav-profile">
                                 <div class="profile-wrap text-center">
                                     <div class="pad-btm">
-                                        <img class="img-circle img-md" src="{{asset('images/profile-photos/1.png')}}"
+                                        <img class="img-circle img-md" src=@yield('useravatar')
                                              alt="Profile Picture">
                                     </div>
 

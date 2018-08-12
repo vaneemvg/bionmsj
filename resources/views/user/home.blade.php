@@ -1,10 +1,10 @@
 @extends('layouts.masteruser')
 
-@section('title' ,'')
+@section('title' ,'Home')
 
 @section('username' ,$usuario->name)
 @section('usermail' ,$usuario->email)
-@section('userfoto',$usuario->foto)
+@section('useravatar',$usuario->avatar)
 
 @section('content')
     <div id="page-content">

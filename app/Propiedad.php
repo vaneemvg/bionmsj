@@ -11,7 +11,7 @@ class Propiedad extends Model
 
     //Atributos asignables
     protected $fillable = [
-        'nombre', 'detalle', 'validacion', 'valor', 'uso', 'aplica', 'obliga', 'estado',
+        'propiedad','nombre', 'detalle', 'validacion', 'valor', 'uso', 'aplica', 'obliga', 'estado','creditos',
     ];
 
     //Relaciones

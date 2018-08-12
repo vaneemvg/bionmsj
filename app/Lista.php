@@ -29,4 +29,9 @@ class Lista extends Model
     {
         return $this->belongsToMany('App\Tag');
     }
+
+    public function cliente()
+    {
+        return $this->belongsTo('App\Cliente');
+    }
 }

@@ -39,9 +39,5 @@
             </a>
         </li>
 
-
-    </ul>
-    </li>
-
     </ul>
 @endsection

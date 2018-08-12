@@ -25,6 +25,7 @@ class CreateContactosTable extends Migration
 
             $table->unique(['telefono', 'cliente_id']);
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
 
             $table->timestamps();
 

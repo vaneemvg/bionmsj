@@ -9,8 +9,7 @@
         <li>
             <a href="{{ url('/user/listas')}}">
                 <i class="pli-letter-open"></i>
-                <span class="menu-title">
-												<strong>Listas</strong>
+                <span class="menu-title"><strong>Listas</strong></span>
             </a>
         </li>
 
@@ -27,26 +26,18 @@
         <li>
             <a href="{{ url('/user/campaigns')}}">
                 <i class="pli-mail-send"></i>
-                <span class="menu-title">
-												<strong>Campañas</strong>
-											</span>
+                <span class="menu-title"><strong>Campañas</strong></span>
             </a>
         </li>
 
         <!--Menu list item-->
         <li>
-            <a href="{{ url('/user/galery')}}">
+            <a href="{{ url('/user/archivos')}}">
                 <i class="pli-photos"></i>
-                <span class="menu-title">
-												<strong>Galería</strong>
-												<span class="pull-right badge badge-purple">@yield('newgalery')</span>
-											</span>
+                <span class="menu-title"><strong>Galería</strong><span
+                            class="pull-right badge badge-purple">@yield('newgalery')</span></span>
             </a>
         </li>
-
-
-    </ul>
-    </li>
 
     </ul>
 @endsection

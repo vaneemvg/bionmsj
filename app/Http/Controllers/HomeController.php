@@ -25,24 +25,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $dashboard = array(
-            "contactos" => 1528,
-            "listas"=> 5,
-            "creditos" => 2500,
-            "campañas"=> 8,
-            "imagenes"=>25,
-            "audiovideo"=>3,
-            "plantillas"=>0,
-            "archivos"=>28,
-        );
-        return view('user.home')->with('usuario', User::find(1))->with('dashboard',$dashboard);
-        /*HABILITAR AL FINALIZAR AUTENTICACION
-        if(Auth::user()->tipo = 'USER'){
-            $dashboard = array();
-            return view('user.home')->with('usuario', Auth::user())->with('dashboard',$dashboard);
+        $user = User::find(1);
+
+        if($user->tipo == 'USER'){
+           $dashboard= $user->getDashboard();
+            return view('user.home')->with('usuario', $user)->with('dashboard',$dashboard);
         }else{
-            $dashboard = array();
-            return view('admin.home')->with('usuario', Auth::user())->with('dashboard',$dashboard);
+            return view('admin.home')->with('usuario', $user);
+        }
+        /*HABILITAR AL FINALIZAR AUTENTICACION
+        $user=Auth::user();
+        if($user->tipo = 'USER'){
+            return view('user.home')->with('usuario', $user)->with('dashboard',$dashboard);
+        }else{
+            return view('admin.home')->with('usuario', $user)->with('dashboard',$dashboard);
         }*/
 
     }

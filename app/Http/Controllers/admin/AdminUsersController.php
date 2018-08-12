@@ -20,7 +20,7 @@ class AdminUsersController extends Controller
 
     /**
      * Show the form for creating a new resource.
-     *
+     * Crea nuevos usuarios, solo usuarios tipo ADMIN pueden realizar la creación
      * @return \Illuminate\Http\Response
      */
     public function create()

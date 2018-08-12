@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
 			$table->enum('estado',['ACTIVO','INACTIVO'])->default('ACTIVO');
 			$table->enum('tipo',['ADMIN','USER'])->default('USER');
             $table->rememberToken();
+            $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->timestamps();
         });
     }

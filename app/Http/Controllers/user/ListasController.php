@@ -27,7 +27,7 @@ class ListasController extends Controller
             ->where('cliente_id',1)//buscar el id que corresponda
             ->paginate(2);
 
-        return view('user.lists')->with('listas', $listas);
+        return view('user.lists.index')->with('listas', $listas);
     }
 
     /**

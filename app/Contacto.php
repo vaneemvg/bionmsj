@@ -30,4 +30,9 @@ class Contacto extends Model
         return $this->belongsToMany('App\Lista')->as('lista_contacto');
     }
 
+    public function cliente()
+    {
+        return $this->belongsTo('App\Cliente');
+    }
+
 }

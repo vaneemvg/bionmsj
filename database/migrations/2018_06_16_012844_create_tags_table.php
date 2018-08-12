@@ -21,7 +21,7 @@ class CreateTagsTable extends Migration
             $table->unique(['nombre', 'cliente_id']);
 
             $table->foreign('user_id')->references('id')->on('users');
-
+            $table->foreign('cliente_id')->references('id')->on('clientes');
             $table->timestamps();
 
         });
