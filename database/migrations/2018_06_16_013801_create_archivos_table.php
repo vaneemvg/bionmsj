@@ -18,9 +18,12 @@ class CreateArchivosTable extends Migration
             $table->string('nombre');
             $table->enum('tipo', ['IMAGEN', 'AUDIO', 'VIDEO', 'PLANTILLA']);
             $table->string('archivo');
+            $table->enum('estado',['ACTIVO','INACTIVO'])->default('ACTIVO');
+            $table->integer('cliente_id')->unsigned();
             $table->integer('user_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('cliente_id')->references('id')->on('clientes');
 
             $table->timestamps();
         });

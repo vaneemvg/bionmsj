@@ -42,10 +42,10 @@ class ArchivosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Archivo  $galeria
+     * @param  \App\Archivo  $archivo
      * @return \Illuminate\Http\Response
      */
-    public function show(Archivo $galeria)
+    public function show(Archivo $archivo)
     {
         //
     }
@@ -56,7 +56,7 @@ class ArchivosController extends Controller
      * @param  \App\Archivo  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function edit(Archivo $galeria)
+    public function edit(Archivo $archivo)
     {
         //
     }
@@ -65,10 +65,10 @@ class ArchivosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Archivo  $galeria
+     * @param  \App\Archivo  $archivo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Archivo $galeria)
+    public function update(Request $request, Archivo $archivo)
     {
         //
     }
@@ -79,7 +79,7 @@ class ArchivosController extends Controller
      * @param  \App\Archivo  $galeria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Archivo $galeria)
+    public function destroy(Archivo $archivo)
     {
         //
     }

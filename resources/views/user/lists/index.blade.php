@@ -25,7 +25,8 @@
                         <input id="input-search2" type="text" placeholder="Search" class="form-control"
                                autocomplete="off">
                     </div>
-                    <button class="btn btn-default" type="button" name="refresh" aria-label="refresh" title="Refresh"><i class="glyphicon pli-repeat-2"></i></button>
+                    <button class="btn btn-default" type="button" name="refresh" aria-label="refresh" title="Refresh"><i
+                                class="glyphicon pli-repeat-2"></i></button>
                 </div>
                 <div class="col-sm-6 text-xs-center text-right">
                     <div class="form-group">
@@ -60,7 +61,6 @@
                         @endforeach
                     </div>
                 </td>
-
 
             </tr>
         @endforeach

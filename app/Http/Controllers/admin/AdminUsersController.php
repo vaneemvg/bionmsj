@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Laracasts\Flash\Flash;
+use App\Http\Requests\ClienteRequest;
 
 class AdminUsersController extends Controller
 {
@@ -15,7 +18,7 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.users.index');
     }
 
     /**
@@ -25,35 +28,36 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.users.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
-        //
+        $usuario = new User();
+        $usuario->guardar($request->all());
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */
     public function show(User $user)
     {
-       // return view('user.profile', ['user' => User::findOrFail($id)]);
+        // return view('user.profile', ['user' => User::findOrFail($id)]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\User  $user
+     * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */
     public function edit(User $user)
@@ -64,11 +68,11 @@ class AdminUsersController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\User  $user
+     * @param  \Illuminate\Http\Request $request
+     * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(UserRequest $request, User $user)
     {
         //
     }
@@ -76,23 +80,25 @@ class AdminUsersController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\User  $user
+     * @param  \App\User $user
      * @return \Illuminate\Http\Response
      */
     public function destroy(User $user)
     {
         //
     }
+
     /**
      * Mostrar información de un usuario.
-     * @param  int  $id
+     * @param  int $id
      * @return Response
      */
 
     public function showProfile()
     {
-        $id=1;
-        $user = User::findOrFail($id);print_r($id);
-        return view('profile',['user' => $user]);
+        $id = 1;
+        $user = User::findOrFail($id);
+        print_r($id);
+        return view('profile', ['user' => $user]);
     }
 }

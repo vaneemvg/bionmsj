@@ -19,7 +19,7 @@
     <!--Nifty Stylesheet [ REQUIRED ]-->
     <link href="{{asset('css/nifty.min.css')}}" rel="stylesheet">
 
-    <!--Pace - Page Load Progress Par [OPTIONAL]
+<!--Pace - Page Load Progress Par [OPTIONAL]
     <link href="{{asset('css/pace.min.css')}}" rel="stylesheet">-->
 
     <!--Premium Icons [ OPTIONAL ]-->
@@ -136,7 +136,8 @@
                 <div class="row">
                     <div class="col-lg-10 col-lg-offset-1">
                         <div class="panel panel-body">
-                            <div class="panel-body">@yield('content')</div>
+
+                            <div class="panel-body">@include('flash::message')@yield('content')</div>
 
                         </div>
                     </div>
@@ -181,7 +182,7 @@
                                 <div class="profile-wrap text-center">
                                     <div class="pad-btm">
                                         <img class="img-circle img-md" src=@yield('useravatar')
-                                             alt="Profile Picture">
+                                                alt="Profile Picture">
                                     </div>
 
                                     <p class="mnp-name">@yield('username')</p>

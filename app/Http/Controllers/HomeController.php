@@ -25,21 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = User::find(1);
+        $user = User::find(1);//buscar el que viene de la autenticación
 
-        if($user->tipo == 'USER'){
-           $dashboard= $user->getDashboard();
-            return view('user.home')->with('usuario', $user)->with('dashboard',$dashboard);
-        }else{
+        if ($user->tipo == 'USER') {
+            $dashboard = $user->getDashboard();
+            return view('user.home')->with('usuario', $user)->with('dashboard', $dashboard);
+        } else {
+            $dashboard = $user->getAdminDashboard();
             return view('admin.home')->with('usuario', $user);
         }
-        /*HABILITAR AL FINALIZAR AUTENTICACION
-        $user=Auth::user();
-        if($user->tipo = 'USER'){
-            return view('user.home')->with('usuario', $user)->with('dashboard',$dashboard);
-        }else{
-            return view('admin.home')->with('usuario', $user)->with('dashboard',$dashboard);
-        }*/
-
     }
 }

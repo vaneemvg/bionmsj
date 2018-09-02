@@ -26,6 +26,15 @@ Route::group(['prefix' => 'user'], function () {
 /*Rutas de admin*/
 Route::group(['prefix' => 'admin'], function () {
     Route::resource('users', 'admin\AdminUsersController');//resource genera todas las rutas del controlador
+    Route::resource('clientes', 'admin\AdminClientesController');
+    Route::get('clientes/{id}/destroy',[
+        'uses' => 'admin\AdminClientesController@destroy',
+        'as' => 'clientes.destroy'
+    ]);
+    Route::get('clientes/{id}/state',[
+        'uses' => 'admin\AdminClientesController@state',
+        'as' => 'clientes.state'
+    ]);
 });
 
 /*

@@ -79,4 +79,38 @@ class User extends Authenticatable
         return $this->belongsTo('App\Cliente');
     }
 
+    public function getDashboard()
+    {
+        $dash = array();
+
+        $dash = array(
+            "contactos" => 1528,
+            "listas"=> 5,
+            "creditos" => 2500,
+            "campañas"=> 8,
+            "imagenes"=>25,
+            "audiovideo"=>3,
+            "plantillas"=>0,
+            "archivos"=>28,
+        );
+        return $dash;
+    }
+
+    public function getAdminDashboard()
+    {
+        $dash = array();
+
+        return $dash;
+    }
+
+    public function guardar($datos)
+    {
+        //armar el guardar aca con modelado de contraseña
+        //$user = new User($datos->all());
+        //$user->password = bcrypt($datos->password);
+        //$user->save();
+        //dd('usuario creado');
+
+    }
+
 }

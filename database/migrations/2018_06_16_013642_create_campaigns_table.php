@@ -17,7 +17,7 @@ class CreateCampaignsTable extends Migration
             $table->increments('id');
 			$table->integer('cliente_id')->unsigned();
 			$table->string('nombre');
-			$table->enum('estado',['FINALIZADA','PENDIENTE','BORRADOR'])->default('PENDIENTE');
+			$table->enum('estado',['FINALIZADA','PENDIENTEENVIO','PENDIENTEFIN','BORRADOR','ANULADA'])->default('BORRADOR');
 			$table->integer('user_id')->unsigned();
 
             $table->foreign('user_id')->references('id')->on('users');

@@ -24,4 +24,9 @@ class Archivo extends Model
     {
         return $this->belongsToMany('App\Envio')->as('envio_archivo');
     }
+
+    public function cliente()
+    {
+        return $this->belongsTo('App\Cliente');
+    }
 }
